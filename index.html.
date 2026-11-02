@@ -844,11 +844,14 @@ body.flora-conversation-page {
         Registrations are processed using Formspree.
         You can ask to unsubscribe or have your
         details deleted at any time.
-    </p>
+</p>
+<p class="landing-privacy">
+    <a href="flora_privacy.html">Read our Privacy Notice</a>
+</p>
 
-    <footer class="landing-footer">
+<footer class="landing-footer">
         <p>Flora · Your Floko Guide</p>
-    </footer>
+</footer>
 
 </main>
 
