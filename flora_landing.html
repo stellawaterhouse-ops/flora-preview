@@ -1,0 +1,856 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meet Flora | Your Floko Guide</title>
+<link rel="stylesheet" href="/static/css/flora.css">
+
+<style>
+
+/* ALIGN TRAVELLERS AND VENUES BUTTONS */
+
+.landing-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-panel .flora-form {
+    margin-top: auto;
+    padding-top: 24px;
+}
+
+/* GENERAL STYLING */
+
+{
+    box-sizing: border-box;
+}
+
+body.flora-conversation-page {
+    margin: 0;
+    color: #24372b;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+
+    /* BEACH BACKGROUND THROUGHOUT THE PAGE */
+    background-color: #dce9e9;
+    background-image: url("/static/images/flora-beach.png");
+    background-repeat: repeat-y;
+    background-size: 100% 100%;
+    background-attachment: scroll;
+   
+}
+
+.landing {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 25px 22px 50px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+}
+
+/* INTRODUCTION ON THE BEACH */
+
+.flora-intro {
+    max-width: 860px;
+    margin: 0 auto 35px;
+    padding: 30px 30px;
+    text-align: center;
+    background: rgba(235, 245, 247, 0.70);
+    border-radius: 20px;
+}
+
+.flora-intro h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0 0 10px;
+}
+
+.flora-intro h2 {
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    margin: 0 0 22px;
+}
+
+.flora-intro p {
+    max-width: 760px;
+    margin: 15px auto;
+    font-size: 17px;
+}
+
+/* GENERAL SECTIONS */
+
+.landing-section {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 24px;
+    background: rgba(235, 245, 247, 0.82);
+    border-radius: 18px;
+}
+
+.landing-section > p {
+    max-width: 780px;
+    margin: 15px auto;
+}
+
+.landing-example {
+    background: rgba(255,255,255,0.65);
+    border-radius: 18px;
+    padding: 25px;
+    margin: 25px auto 0;
+    text-align: left;
+}
+
+.landing-example h3 {
+    margin-top: 0;
+}
+
+/* HOW FLORA WORKS */
+
+.landing-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.landing-step {
+    background: rgba(255,255,255,0.65);
+    border-radius: 18px;
+    padding: 22px;
+    min-width: 0;
+}
+
+.landing-step h3 {
+    margin-top: 0;
+}
+
+/* TRAVELLERS AND VENUES */
+
+.landing-sections {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin: 35px auto;
+    text-align: left;
+}
+
+.landing-panel {
+    background: rgba(235, 245, 247, 0.88);
+    border-radius: 18px;
+    padding: 28px;
+    min-width: 0;
+}
+
+.landing-panel h2 {
+    margin-top: 0;
+}
+
+.landing-panel ul,
+.future-item ul {
+    padding-left: 25px;
+}
+
+.landing-panel li,
+.future-item li {
+    margin-bottom: 12px;
+}
+
+/* FORMS */
+
+.flora-form {
+    margin-top: 24px;
+    text-align: left;
+}
+
+.flora-form > label:not(.waitlist-consent) {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.flora-form input[type="email"],
+.flora-form select {
+    display: block;
+    width: 100%;
+    padding: 11px 12px;
+    margin-bottom: 16px;
+    border: 1px solid #8da8a0;
+    border-radius: 8px;
+    background: white;
+    color: #24372b;
+    font: inherit;
+    font-size: 16px;
+}
+
+.waitlist-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.waitlist-consent input[type="checkbox"] {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    margin: 3px 0 0;
+    accent-color: #3e604b;
+}
+
+.waitlist-consent span {
+    flex: 1;
+}
+
+/* GREEN BUTTONS */
+
+.flora-form button {
+    display: block;
+    width: 100%;
+    padding: 13px 18px;
+    margin-top: 15px;
+
+    background: linear-gradient(
+        180deg,
+        #52765f 0%,
+        #3e604b 55%,
+        #345540 100%
+    );
+
+    color: white;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 30px;
+    box-shadow:
+        inset 0 1px 2px rgba(255,255,255,0.28),
+        0 4px 10px rgba(30,60,40,0.18);
+
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.flora-form button:hover {
+    background: #486b54;
+}
+
+.flora-form button:focus-visible {
+    outline: 3px solid #243f30;
+    outline-offset: 3px;
+}
+
+/* FUTURE FLORA */
+
+.future-flora {
+    background: rgba(235, 245, 247, 0.88);
+    border-radius: 18px;
+    padding: 30px;
+    margin: 40px auto;
+}
+
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.future-item {
+    padding: 5px 12px;
+}
+
+.future-item h3 {
+    margin-top: 0;
+}
+
+.future-registration {
+    max-width: 620px;
+    margin: 30px auto 0;
+    padding: 24px;
+    background: rgba(255,255,255,0.65);
+    border-radius: 16px;
+    text-align: left;
+}
+
+.future-registration h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.future-note {
+    font-size: 16px;
+}
+
+/* PROMISE AND FOOTER */
+
+.landing-promise,
+.landing-privacy {
+    max-width: 760px;
+    margin: 35px auto;
+    padding: 24px;
+    background: rgba(235,245,247,0.85);
+    border-radius: 18px;
+}
+
+.landing-privacy {
+    font-size: 15px;
+}
+
+.landing-footer {
+    margin-top: 35px;
+    padding: 12px;
+    background: rgba(235,245,247,0.80);
+    border-radius: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 680px) {
+
+    body.flora-conversation-page {
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center top;
+   }
+
+    .landing {
+        padding: 16px 14px 30px;
+    }
+
+    .flora-intro {
+        padding: 24px 18px;
+        background: rgba(235,245,247,0.88);
+    }
+
+    .flora-intro p {
+        font-size: 16px;
+    }
+
+    .landing-sections,
+    .landing-steps,
+    .future-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-section,
+    .landing-panel,
+    .landing-step,
+    .landing-example,
+    .future-flora {
+        padding: 20px;
+    }
+
+    .future-registration {
+        padding: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+/* FINAL VISUAL REFINEMENTS */
+
+body.flora-conversation-page {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.flora-intro h1 {
+    font-size: clamp(1.9rem, 3.7vw, 2.8rem);
+}
+
+.flora-intro h2 {
+    font-size: clamp(1.15rem, 2.3vw, 1.6rem);
+}
+
+.flora-intro p {
+    font-size: 16.5px;
+}
+
+.landing-section h2,
+.landing-panel h2,
+.future-flora h2,
+.landing-promise h2 {
+    font-size: 1.85rem;
+}
+
+.landing-step h3,
+.landing-example h3,
+.future-item h3,
+.future-registration h3 {
+    font-size: 1.18rem;
+}
+
+@media (max-width: 680px) {
+    body.flora-conversation-page {
+        background-attachment: scroll;
+        background-size: cover;
+    }
+
+    .flora-intro p {
+        font-size: 16px;
+    }
+
+    .landing-section h2,
+    .landing-panel h2,
+    .future-flora h2,
+    .landing-promise h2 {
+        font-size: 1.6rem;
+    }
+}
+.future-grid {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+</head>
+
+<body class="flora-conversation-page">
+
+<main class="landing">
+
+    <!-- INTRODUCTION -->
+
+    <header class="flora-intro">
+
+        <h1>Meet Flora</h1>
+
+        <h2>
+            Know what to expect, from the start of your
+            journey to your destination.
+        </h2>
+
+        <p>
+            Flora is being developed to bring together practical
+            accessibility, sensory and journey information,
+            helping people understand what they may encounter
+            along the way and at the places they want to visit.
+        </p>
+
+        <p>
+            Working with venues and trusted information sources,
+            Flora aims to provide clear, verified information
+            wherever possible, identify what hasn't yet been
+            verified, and highlight anything that remains unknown.
+        </p>
+
+        <p>
+            The aim is simple: to give people enough reliable
+            information to make their own decisions about
+            where they go and what they do.
+        </p>
+
+    </header>
+
+    <!-- WHY FLORA -->
+
+    <section class="landing-section">
+
+        <h2>Why Flora?</h2>
+
+        <p>
+            Finding somewhere you'd love to visit is one thing.
+            Finding out whether it will actually work for you
+            can be quite another.
+        </p>
+
+        <p>
+            Accessibility is about more than whether a facility
+            exists. It matters whether you can reach it, use it,
+            and whether there are conditions attached.
+        </p>
+
+        <p>
+            Flora aims to make that information easier to find,
+            understand and trust, while being clear about
+            anything that remains unknown.
+        </p>
+
+        <div class="landing-example">
+
+            <h3>Imagine you're planning a visit...</h3>
+
+            <p>
+                You've found a restaurant you'd like to try.
+                But is the entrance step-free? How noisy is
+                the dining area? Can you reach the accessible
+                toilet without going back outside?
+            </p>
+
+            <p>
+                Perhaps you need somewhere to sit along the
+                journey, or want to know whether assistance
+                must be arranged in advance.
+            </p>
+
+            <p>
+                These are the sorts of practical questions
+                Flora is being developed to help answer,
+                without guessing when reliable information
+                isn't available.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- HOW FLORA WILL HELP -->
+
+    <section class="landing-section">
+
+        <h2>How Flora will help</h2>
+
+        <p>
+            Start with where you want to go or what
+            you'd like to do.
+        </p>
+
+        <div class="landing-steps">
+
+            <div class="landing-step">
+                <h3>1. Tell Flora your plans</h3>
+                <p>
+                    Begin with a place, destination or
+                    experience you're interested in.
+                </p>
+            </div>
+
+            <div class="landing-step">
+                <h3>2. Explain what matters</h3>
+                <p>
+                    Ask about access, noise, facilities,
+                    journeys or your individual requirements.
+                </p>
+            </div>
+
+            <div class="landing-step">
+                <h3>3. Decide for yourself</h3>
+                <p>
+                    Understand what is known, how reliable
+                    the information is and what's still missing.
+                </p>
+            </div>
+
+        </div>
+
+        <p class="future-note">
+            Flora is currently in development.
+            We're building and testing these capabilities
+            as the platform grows.
+        </p>
+
+    </section>
+
+    <!-- TRAVELLERS AND VENUES -->
+
+    <div class="landing-sections">
+
+        <section class="landing-panel">
+
+            <h2>For travellers</h2>
+
+            <p>
+                Explore unfamiliar places with greater confidence.
+            </p>
+
+            <ul>
+                <li>Practical information about places and journeys.</li>
+                <li>Ask Flora about your individual requirements.</li>
+                <li>Understand what is verified and what remains uncertain.</li>
+                <li>Free for travellers.</li>
+            </ul>
+
+            <form
+                class="flora-form"
+                action="https://formspree.io/f/xoeenlkw"
+                method="POST"
+            >
+
+                <label for="traveller-email">
+                    Your email address
+                </label>
+
+                <input
+                    type="email"
+                    id="traveller-email"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+
+                <label class="waitlist-consent">
+                    <input
+                        type="checkbox"
+                        name="consent"
+                        value="yes"
+                        required
+                    >
+                    <span>
+                        I agree to receive email updates about Flora.
+                        I understand I can unsubscribe at any time.
+                    </span>
+                </label>
+
+                <button type="submit">
+                    Join the travellers' waitlist
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="landing-panel">
+
+            <h2>For venues</h2>
+
+            <p>
+                Help visitors understand what your venue offers.
+            </p>
+
+            <ul>
+                <li>Venue Information Walkthrough.</li>
+                <li>Clear, practical visitor information.</li>
+                <li>Fewer repetitive enquiries and misunderstandings.</li>
+                <li>Optional ongoing information updates.</li>
+            </ul>
+
+            <form
+                class="flora-form"
+                action="https://formspree.io/f/mgaalznz"
+                method="POST"
+            >
+
+                <label for="venue-email">
+                    Your email address
+                </label>
+
+                <input
+                    type="email"
+                    id="venue-email"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+
+                <label class="waitlist-consent">
+                    <input
+                        type="checkbox"
+                        name="consent"
+                        value="yes"
+                        required
+                    >
+                    <span>
+                        I agree to receive email updates about Flora.
+                        I understand I can unsubscribe at any time.
+                    </span>
+                </label>
+
+                <button type="submit">
+                    Join the venues' waitlist
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- FUTURE FLORA -->
+
+    <section class="future-flora">
+
+        <h2>Future Flora</h2>
+
+        <p>Help us bring Flora to more places.</p>
+
+        <p>
+            Our ambition is to grow Flora through a network
+            of people and organisations who share our belief
+            that reliable visitor information should be
+            easier to find and use.
+        </p>
+
+        <div class="future-grid">
+
+            <div class="future-item">
+
+                <h3>Become part of Flora's local network</h3>
+
+                <p>
+                    We're interested in hearing from people
+                    who would like to work flexibly from home,
+                    connecting with venues in their own areas.
+                </p>
+
+                <p>
+                    The aim is to develop opportunities for
+                    local interviewers who can introduce Flora,
+                    encourage venues to participate and help
+                    gather practical visitor information
+                    using a consistent approach.
+                </p>
+
+            </div>
+
+            <div class="future-item">
+
+                <h3>Collaborate with Flora</h3>
+
+                <p>
+                    We're keen to explore working with
+                    people and organisations already active
+                    in related fields, including:
+                </p>
+
+                <ul>
+                    <li>3D and virtual tour providers.</li>
+                    <li>Accessibility and sensory specialists.</li>
+                    <li>Destination Management Companies (DMCs).</li>
+                    <li>Local destination and travel experts.</li>
+                    <li>Accessible travel and visitor support services.</li>
+                </ul>
+
+                <p>
+                    Rather than duplicating valuable work,
+                    we'd like to explore how complementary
+                    information and expertise can work together.
+                </p>
+
+            </div>
+
+        </div>
+
+        <h3>Stronger together</h3>
+
+        <p>
+            Flora is intended to grow through collaboration,
+            helping more people access the information
+            they need to make their own choices.
+        </p>
+
+        <p class="future-note">
+            These are future plans and opportunities
+            we're exploring, rather than established
+            roles or formal partnerships.
+        </p>
+
+        <!-- FUTURE FLORA FORM -->
+
+        <div class="future-registration">
+
+            <h3>Interested in helping Flora grow?</h3>
+
+            <p>
+                Register your interest and let us know
+                how you'd like to be involved.
+            </p>
+
+            <form
+                class="flora-form"
+                action="https://formspree.io/f/myeebzgp"
+                method="POST"
+            >
+
+                <label for="future-email">
+                    Your email address
+                </label>
+
+                <input
+                    type="email"
+                    id="future-email"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="future-interest">
+                    I'm interested in
+                </label>
+
+                <select
+                    id="future-interest"
+                    name="interest"
+                    required
+                >
+                    <option value="" disabled selected>
+                        Please select
+                    </option>
+
+                    <option value="local-interviewer">
+                        Becoming a local venue interviewer
+                    </option>
+
+                    <option value="collaboration">
+                        Collaborating with Flora
+                    </option>
+
+                    <option value="both">
+                        Both
+                    </option>
+                </select>
+
+                <label class="waitlist-consent">
+                    <input
+                        type="checkbox"
+                        name="consent"
+                        value="yes"
+                        required
+                    >
+                    <span>
+                        I agree to be contacted about
+                        Future Flora opportunities.
+                        I understand I can ask to have
+                        my details removed at any time.
+                    </span>
+                </label>
+
+                <button type="submit">
+                    Register your interest
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+<!-- CLOSING THOUGHT -->
+
+<section class="landing-promise">
+    <p>
+        Everyone deserves enough reliable information
+        to make their own decision.
+        Let Flora help you make yours.
+    </p>
+</section>
+
+    <!-- PRIVACY -->
+
+    <p class="landing-privacy">
+        We use your email address only to contact you
+        about Flora and your interest in joining.
+        Registrations are processed using Formspree.
+        You can ask to unsubscribe or have your
+        details deleted at any time.
+    </p>
+
+    <footer class="landing-footer">
+        <p>Flora · Your Floko Guide</p>
+    </footer>
+
+</main>
+
+</body>
+</html>
