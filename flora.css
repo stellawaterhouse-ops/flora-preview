@@ -113,7 +113,7 @@ body.flora-conversation-page {
             rgba(194, 214, 220, 0.06) 100%
         ),
 
-        url("/static/images/flora-beach.png");
+        url("flora-beach.png")
 
     background-size:
         100% 100%,
