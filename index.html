@@ -1,44 +1,30 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Meet Flora | Your Floko Guide</title>
-<link rel="stylesheet" href="flora.css">
+<link rel="stylesheet" href="/static/css/flora.css">
 
 <style>
-
-/* ALIGN TRAVELLERS AND VENUES BUTTONS */
-
-.landing-panel {
-    display: flex;
-    flex-direction: column;
-}
-
-.landing-panel .flora-form {
-    margin-top: auto;
-    padding-top: 24px;
-}
-
-/* GENERAL STYLING */
-
-{
+* {
     box-sizing: border-box;
 }
+
+/* GENERAL PAGE AND BEACH BACKGROUND */
 
 body.flora-conversation-page {
     margin: 0;
     color: #24372b;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-
-    /* BEACH BACKGROUND THROUGHOUT THE PAGE */
     background-color: #dce9e9;
     background-image: url("flora-beach.png");
-    background-repeat: repeat-y;
-    background-size: 100% 100%;
-    background-attachment: scroll;
-   
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .landing {
@@ -52,31 +38,66 @@ h1, h2, h3 {
     line-height: 1.3;
 }
 
-/* INTRODUCTION ON THE BEACH */
+/* INTRODUCTION */
 
 .flora-intro {
     max-width: 860px;
     margin: 0 auto 35px;
-    padding: 30px 30px;
+    padding: 30px;
     text-align: center;
     background: rgba(235, 245, 247, 0.70);
     border-radius: 20px;
 }
 
 .flora-intro h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.9rem, 3.7vw, 2.8rem);
     margin: 0 0 10px;
 }
 
 .flora-intro h2 {
-    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    font-size: clamp(1.15rem, 2.3vw, 1.6rem);
     margin: 0 0 22px;
 }
 
 .flora-intro p {
     max-width: 760px;
     margin: 15px auto;
-    font-size: 17px;
+    font-size: 16.5px;
+}
+
+/* VOICE CONTROLS */
+
+.flora-voice-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 16px 0 24px;
+}
+
+.flora-voice-controls button {
+    padding: 10px 18px;
+    border: 1px solid #456c57;
+    border-radius: 24px;
+    background: #eaf4ed;
+    color: #24372b;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.flora-voice-controls button:hover:not(:disabled) {
+    background: #d5e9dc;
+}
+
+.flora-voice-controls button:focus-visible {
+    outline: 3px solid #24372b;
+    outline-offset: 3px;
+}
+
+.flora-voice-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* GENERAL SECTIONS */
@@ -138,6 +159,8 @@ h1, h2, h3 {
 }
 
 .landing-panel {
+    display: flex;
+    flex-direction: column;
     background: rgba(235, 245, 247, 0.88);
     border-radius: 18px;
     padding: 28px;
@@ -158,11 +181,28 @@ h1, h2, h3 {
     margin-bottom: 12px;
 }
 
+/* TRAVELLER COLUMN AND EXPERIENCE BOX */
+.experience-panel { max-width: 850px; margin: 30px auto 40px; background: rgba(235,245,247,0.92); border-radius: 18px; padding: 24px 28px; text-align: left; }
+.experience-panel h3 { margin: 0 0 12px; font-size: 1.3rem; }
+.experience-panel p { margin: 10px 0; }
+.experience-panel details { margin-top: 16px; }
+.experience-panel summary { display: block; cursor: pointer; text-align: center; padding: 12px 18px; border-radius: 30px; background: #3e604b; color: white; font-weight: bold; }
+.experience-panel summary:focus-visible { outline: 3px solid #243f30; outline-offset: 3px; }
+.experience-panel textarea { width: 100%; min-height: 130px; padding: 11px 12px; border: 1px solid #8da8a0; border-radius: 8px; font: inherit; resize: vertical; }
+.experience-panel .flora-form { margin-top: 16px; }
+.experience-panel .flora-form label:not(.waitlist-consent) { display: block; margin: 12px 0 6px; }
+.experience-panel .experience-note { font-size: 0.9rem; }
+
 /* FORMS */
 
 .flora-form {
     margin-top: 24px;
     text-align: left;
+}
+
+.landing-panel .flora-form {
+    margin-top: auto;
+    padding-top: 24px;
 }
 
 .flora-form > label:not(.waitlist-consent) {
@@ -212,21 +252,18 @@ h1, h2, h3 {
     width: 100%;
     padding: 13px 18px;
     margin-top: 15px;
-
     background: linear-gradient(
         180deg,
         #52765f 0%,
         #3e604b 55%,
         #345540 100%
     );
-
     color: white;
     border: 1px solid rgba(255,255,255,0.25);
     border-radius: 30px;
     box-shadow:
         inset 0 1px 2px rgba(255,255,255,0.28),
         0 4px 10px rgba(30,60,40,0.18);
-
     font: inherit;
     font-weight: bold;
     cursor: pointer;
@@ -252,9 +289,10 @@ h1, h2, h3 {
 
 .future-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+    max-width: 720px;
     gap: 24px;
-    margin-top: 25px;
+    margin: 25px auto 0;
     text-align: left;
 }
 
@@ -309,12 +347,11 @@ h1, h2, h3 {
 /* MOBILE */
 
 @media (max-width: 680px) {
-
     body.flora-conversation-page {
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
+        background-attachment: scroll;
         background-position: center top;
-   }
+        background-size: cover;
+    }
 
     .landing {
         padding: 16px 14px 30px;
@@ -346,39 +383,29 @@ h1, h2, h3 {
     .future-registration {
         padding: 18px;
     }
-}
 
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
+    .landing-section h2,
+    .landing-panel h2,
+    .future-flora h2,
+    .landing-promise h2 {
+        font-size: 1.6rem;
     }
-}
-/* FINAL VISUAL REFINEMENTS */
-
-body.flora-conversation-page {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.flora-intro h1 {
-    font-size: clamp(1.9rem, 3.7vw, 2.8rem);
-}
-
-.flora-intro h2 {
-    font-size: clamp(1.15rem, 2.3vw, 1.6rem);
-}
-
-.flora-intro p {
-    font-size: 16.5px;
 }
 
 .landing-section h2,
 .landing-panel h2,
 .future-flora h2,
 .landing-promise h2 {
-    font-size: 1.85rem;
+    line-height: 1.3;
+}
+
+@media (min-width: 681px) {
+    .landing-section h2,
+    .landing-panel h2,
+    .future-flora h2,
+    .landing-promise h2 {
+        font-size: 1.85rem;
+    }
 }
 
 .landing-step h3,
@@ -388,28 +415,10 @@ body.flora-conversation-page {
     font-size: 1.18rem;
 }
 
-@media (max-width: 680px) {
-    body.flora-conversation-page {
-        background-attachment: scroll;
-        background-size: cover;
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
-
-    .flora-intro p {
-        font-size: 16px;
-    }
-
-    .landing-section h2,
-    .landing-panel h2,
-    .future-flora h2,
-    .landing-promise h2 {
-        font-size: 1.6rem;
-    }
-}
-.future-grid {
-    grid-template-columns: 1fr;
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
 }
 </style>
 </head>
@@ -423,6 +432,21 @@ body.flora-conversation-page {
     <header class="flora-intro">
 
         <h1>Meet Flora</h1>
+
+        <div class="flora-voice-controls"
+             role="group"
+             aria-label="Page audio controls">
+
+            <button type="button" id="flora-listen">Listen to this page
+            </button>
+
+            <button type="button" id="flora-pause" disabled>Pause
+            </button>
+
+            <button type="button" id="flora-stop" disabled>Stop reading
+            </button>
+
+        </div>
 
         <h2>
             Know what to expect, from the start of your
@@ -503,6 +527,31 @@ body.flora-conversation-page {
 
     </section>
 
+    <!-- VISITOR EXPERIENCES -->
+
+        <section class="experience-panel" aria-labelledby="experience-heading">
+            <h3 id="experience-heading">Tell us about your experiences</h3>
+            <p>Have you ever arrived somewhere and discovered things weren't quite as you expected? Or found somewhere that got everything right?</p>
+            <p>We'd love to hear about your experiences and learn from them.</p>
+            <details>
+                <summary>Share your experience</summary>
+                <!-- Uses the existing traveller Formspree inbox until a dedicated form is configured. -->
+                <form class="flora-form" action="https://formspree.io/f/xoeenlkw" method="POST">
+                    <input type="hidden" name="submission_type" value="Flora experience">
+                    <label for="experience-message">What happened?</label>
+                    <textarea id="experience-message" name="experience" required maxlength="5000" placeholder="Tell us what worked well, what was difficult, or what information would have helped."></textarea>
+                    <label for="experience-email">Email address (optional)</label>
+                    <input type="email" id="experience-email" name="email" autocomplete="email" placeholder="you@example.com">
+                    <label class="waitlist-consent">
+                        <input type="checkbox" name="follow_up_permission" value="yes">
+                        <span>You may contact me about this experience (optional).</span>
+                    </label>
+                    <p class="experience-note">Please avoid including sensitive personal or medical details. Your experience may help improve Flora; we won't publish your story without asking you first.</p>
+                    <button type="submit">Send your experience</button>
+                </form>
+            </details>
+        </section>
+
     <!-- HOW FLORA WILL HELP -->
 
     <section class="landing-section">
@@ -553,6 +602,7 @@ body.flora-conversation-page {
     <!-- TRAVELLERS AND VENUES -->
 
     <div class="landing-sections">
+
 
         <section class="landing-panel">
 
@@ -608,6 +658,7 @@ body.flora-conversation-page {
             </form>
 
         </section>
+
 
         <section class="landing-panel">
 
@@ -826,34 +877,314 @@ body.flora-conversation-page {
 
     </section>
 
-<!-- CLOSING THOUGHT -->
+    <!-- CLOSING THOUGHT -->
 
-<section class="landing-promise">
-    <p>
-        Everyone deserves enough reliable information
-        to make their own decision.
-        Let Flora help you make yours.
-    </p>
-</section>
+    <section class="landing-promise">
+        <p>
+            Everyone deserves enough reliable information
+            to make their own decision.
+            Let Flora help you make yours.
+        </p>
+    </section>
 
     <!-- PRIVACY -->
 
     <p class="landing-privacy">
-        We use your email address only to contact you
-        about Flora and your interest in joining.
-        Registrations are processed using Formspree.
+        We use waitlist email addresses to contact you about Flora
+        and your interest in joining. Experiences you choose to share
+        are used to help improve Flora; an email address is optional
+        and is used for follow-up only with your permission.
+        Forms are processed using Formspree.
         You can ask to unsubscribe or have your
         details deleted at any time.
-</p>
-<p class="landing-privacy">
-    <a href="flora_privacy.html">Read our Privacy Notice</a>
-</p>
+    </p>
 
-<footer class="landing-footer">
-        <p>Flora · Your Floko Guide</p>
-</footer>
+    <footer class="landing-footer">
+        <p>Flora Â· Your Floko Guide</p>
+    </footer>
 
 </main>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const listenButton = document.getElementById("flora-listen");
+    const pauseButton = document.getElementById("flora-pause");
+    const stopButton = document.getElementById("flora-stop");
+    const page = document.querySelector("main.landing");
+
+    if (!listenButton || !pauseButton || !stopButton || !page) {
+        return;
+    }
+
+
+    const synth = window.speechSynthesis;
+    const browserVoiceAvailable = "speechSynthesis" in window;
+
+    let paragraphs = [];
+    let currentIndex = 0;
+    let reading = false;
+    let paused = false;
+    let session = 0;
+    let currentAudio = null;
+    let currentAudioUrl = null;
+    let activeRequest = null;
+
+    function chooseVoice() {
+        if (!browserVoiceAvailable) return null;
+
+        const voices = synth.getVoices();
+
+        return (
+            voices.find(v =>
+                v.lang === "en-GB" &&
+                v.name.includes("Libby Online")
+            ) ||
+            voices.find(v => v.lang === "en-GB") ||
+            null
+        );
+    }
+
+    function updateButtons() {
+        listenButton.disabled = reading;
+        pauseButton.disabled = !reading;
+        stopButton.disabled = !reading;
+
+        pauseButton.textContent = paused
+            ? "Resume"
+            : "Pause";
+
+        pauseButton.setAttribute(
+            "aria-label",
+            paused ? "Resume reading" : "Pause reading"
+        );
+    }
+
+    function clearAudio() {
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.onended = null;
+            currentAudio.onerror = null;
+            currentAudio = null;
+        }
+
+        if (currentAudioUrl) {
+            URL.revokeObjectURL(currentAudioUrl);
+            currentAudioUrl = null;
+        }
+    }
+
+    function stopReading() {
+        session++;
+        reading = false;
+        paused = false;
+
+        if (activeRequest) {
+            activeRequest.abort();
+            activeRequest = null;
+        }
+
+        clearAudio();
+
+        if (browserVoiceAvailable) {
+            synth.cancel();
+        }
+
+        updateButtons();
+    }
+
+    function speakWithLibby(text, mySession) {
+        if (!browserVoiceAvailable) {
+            stopReading();
+            return;
+        }
+
+        const speech = new SpeechSynthesisUtterance(text);
+        const voice = chooseVoice();
+
+        if (voice) speech.voice = voice;
+
+        speech.lang = "en-GB";
+        speech.rate = 0.95;
+        speech.pitch = 1;
+        speech.volume = 1;
+
+        speech.onend = function () {
+            if (mySession !== session) return;
+            currentIndex++;
+            speakNext(mySession);
+        };
+
+        speech.onerror = function (event) {
+            if (mySession !== session) return;
+
+            if (event.error !== "canceled" &&
+                event.error !== "interrupted") {
+                stopReading();
+            }
+        };
+
+        synth.speak(speech);
+
+        if (paused) synth.pause();
+    }
+
+    async function speakNext(mySession) {
+        if (!reading || paused || mySession !== session) {
+            return;
+        }
+
+        if (currentIndex >= paragraphs.length) {
+            stopReading();
+            return;
+        }
+
+        const text = paragraphs[currentIndex];
+
+        // Static GitHub Pages cannot run the Python Cartesia endpoint.
+        // Use browser speech there; use Cartesia when served by the Python app.
+        const staticHosting = window.location.hostname.endsWith("github.io");
+        if (staticHosting || text.length > 500) {
+            speakWithLibby(text, mySession);
+            return;
+        }
+
+        const controller = new AbortController();
+        activeRequest = controller;
+
+        try {
+            const response = await fetch("/api/flora/voice", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ text: text }),
+                signal: controller.signal
+            });
+
+            if (!response.ok) {
+                throw new Error("Voice service unavailable");
+            }
+
+            const audioBlob = await response.blob();
+
+            if (mySession !== session || !reading) return;
+
+            activeRequest = null;
+
+            currentAudioUrl = URL.createObjectURL(audioBlob);
+            currentAudio = new Audio(currentAudioUrl);
+
+            currentAudio.onended = function () {
+                if (mySession !== session) return;
+
+                clearAudio();
+                currentIndex++;
+                speakNext(mySession);
+            };
+
+            currentAudio.onerror = function () {
+                if (mySession !== session) return;
+
+                clearAudio();
+                speakWithLibby(text, mySession);
+            };
+
+            if (!paused) {
+                await currentAudio.play();
+            }
+
+        } catch (error) {
+            if (mySession !== session || !reading) return;
+
+            activeRequest = null;
+            clearAudio();
+
+            if (error.name !== "AbortError") {
+                speakWithLibby(text, mySession);
+            }
+        }
+    }
+
+    listenButton.addEventListener("click", function () {
+        stopReading();
+
+        paragraphs = Array.from(
+            page.querySelectorAll("h1, h2, h3, p, li")
+        )
+        .filter(element =>
+            !element.closest(
+                ".flora-voice-controls, .flora-form"
+            )
+        )
+        .map(element =>
+            element.textContent.replace(/\s+/g, " ").trim()
+        )
+        .filter(Boolean)
+.flatMap(text => {
+    const chunks = [];
+    let remaining = text;
+
+    while (remaining.length > 450) {
+        let splitAt = remaining.lastIndexOf(" ", 450);
+        if (splitAt < 1) splitAt = 450;
+
+        chunks.push(remaining.slice(0, splitAt).trim());
+        remaining = remaining.slice(splitAt).trim();
+    }
+
+    if (remaining) chunks.push(remaining);
+
+    return chunks;
+});
+
+        if (!paragraphs.length) return;
+
+        currentIndex = 0;
+        reading = true;
+        paused = false;
+
+        updateButtons();
+        speakNext(session);
+    });
+
+    pauseButton.addEventListener("click", function () {
+        if (!reading) return;
+
+        if (paused) {
+            paused = false;
+
+            if (currentAudio) {
+                currentAudio.play().catch(() => stopReading());
+            } else if (browserVoiceAvailable) {
+                synth.resume();
+            } else {
+                speakNext(session);
+            }
+        } else {
+            paused = true;
+
+            if (currentAudio) {
+                currentAudio.pause();
+            }
+
+            if (browserVoiceAvailable) {
+                synth.pause();
+            }
+        }
+
+        updateButtons();
+    });
+
+    stopButton.addEventListener("click", stopReading);
+    window.addEventListener("pagehide", stopReading);
+
+    updateButtons();
+});
+</script>
+
 </body>
 </html>
+
+
+
+
