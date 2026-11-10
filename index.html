@@ -1,12 +1,12 @@
-﻿
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Meet Flora | Your Floko Guide</title>
-<link rel="stylesheet" href="/static/css/flora.css">
-
+<link href="/static/css/flora.css" rel="stylesheet"/>
 <style>
 * {
     box-sizing: border-box;
@@ -422,474 +422,203 @@ h1, h2, h3 {
 }
 </style>
 </head>
-
 <body class="flora-conversation-page">
-
 <main class="landing">
-
-    <!-- INTRODUCTION -->
-
-    <header class="flora-intro">
-
-        <h1>Meet Flora</h1>
-
-        <div class="flora-voice-controls"
-             role="group"
-             aria-label="Page audio controls">
-
-            <button type="button" id="flora-listen">Listen to this page
+<!-- INTRODUCTION -->
+<header class="flora-intro">
+<h1>Meet Flora</h1>
+<div aria-label="Page audio controls" class="flora-voice-controls" role="group">
+<button id="flora-listen" type="button">Listen to this page
             </button>
-
-            <button type="button" id="flora-pause" disabled>Pause
+<button disabled="" id="flora-pause" type="button">Pause
             </button>
-
-            <button type="button" id="flora-stop" disabled>Stop reading
+<button disabled="" id="flora-stop" type="button">Stop reading
             </button>
-
-        </div>
-
-        <h2>
-            Know what to expect, from the start of your
-            journey to your destination.
-        </h2>
-
-        <p>
-            Flora is being developed to bring together practical
-            accessibility, sensory and journey information,
-            helping people understand what they may encounter
-            along the way and at the places they want to visit.
-        </p>
-
-        <p>
-            Working with venues and trusted information sources,
-            Flora aims to provide clear, verified information
-            wherever possible, identify what hasn't yet been
-            verified, and highlight anything that remains unknown.
-        </p>
-
-        <p>
-            The aim is simple: to give people enough reliable
-            information to make their own decisions about
-            where they go and what they do.
-        </p>
-
-    </header>
-
-    <!-- WHY FLORA -->
-
-    <section class="landing-section">
-
-        <h2>Why Flora?</h2>
-
-        <p>
-            Finding somewhere you'd love to visit is one thing.
-            Finding out whether it will actually work for you
-            can be quite another.
-        </p>
-
-        <p>
-            Accessibility is about more than whether a facility
-            exists. It matters whether you can reach it, use it,
-            and whether there are conditions attached.
-        </p>
-
-        <p>
-            Flora aims to make that information easier to find,
-            understand and trust, while being clear about
-            anything that remains unknown.
-        </p>
-
-        <div class="landing-example">
-
-            <h3>Imagine you're planning a visit...</h3>
-
-            <p>
-                You've found a restaurant you'd like to try.
-                But is the entrance step-free? How noisy is
-                the dining area? Can you reach the accessible
-                toilet without going back outside?
-            </p>
-
-            <p>
-                Perhaps you need somewhere to sit along the
-                journey, or want to know whether assistance
-                must be arranged in advance.
-            </p>
-
-            <p>
-                These are the sorts of practical questions
-                Flora is being developed to help answer,
-                without guessing when reliable information
-                isn't available.
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- VISITOR EXPERIENCES -->
-
-        <section class="experience-panel" aria-labelledby="experience-heading">
-            <h3 id="experience-heading">Tell us about your experiences</h3>
-            <p>Have you ever arrived somewhere and discovered things weren't quite as you expected? Or found somewhere that got everything right?</p>
-            <p>We'd love to hear about your experiences and learn from them.</p>
-            <details>
-                <summary>Share your experience</summary>
-                <!-- Uses the existing traveller Formspree inbox until a dedicated form is configured. -->
-                <form class="flora-form" action="https://formspree.io/f/xoeenlkw" method="POST">
-                    <input type="hidden" name="submission_type" value="Flora experience">
-                    <label for="experience-message">What happened?</label>
-                    <textarea id="experience-message" name="experience" required maxlength="5000" placeholder="Tell us what worked well, what was difficult, or what information would have helped."></textarea>
-                    <label for="experience-email">Email address (optional)</label>
-                    <input type="email" id="experience-email" name="email" autocomplete="email" placeholder="you@example.com">
-                    <label class="waitlist-consent">
-                        <input type="checkbox" name="follow_up_permission" value="yes">
-                        <span>You may contact me about this experience (optional).</span>
-                    </label>
-                    <p class="experience-note">Please avoid including sensitive personal or medical details. Your experience may help improve Flora; we won't publish your story without asking you first.</p>
-                    <button type="submit">Send your experience</button>
-                </form>
-            </details>
-        </section>
-
-    <!-- HOW FLORA WILL HELP -->
-
-    <section class="landing-section">
-
-        <h2>How Flora will help</h2>
-
-        <p>
-            Start with where you want to go or what
-            you'd like to do.
-        </p>
-
-        <div class="landing-steps">
-
-            <div class="landing-step">
-                <h3>1. Tell Flora your plans</h3>
-                <p>
-                    Begin with a place, destination or
-                    experience you're interested in.
-                </p>
-            </div>
-
-            <div class="landing-step">
-                <h3>2. Explain what matters</h3>
-                <p>
-                    Ask about access, noise, facilities,
-                    journeys or your individual requirements.
-                </p>
-            </div>
-
-            <div class="landing-step">
-                <h3>3. Decide for yourself</h3>
-                <p>
-                    Understand what is known, how reliable
-                    the information is and what's still missing.
-                </p>
-            </div>
-
-        </div>
-
-        <p class="future-note">
-            Flora is currently in development.
-            We're building and testing these capabilities
-            as the platform grows.
-        </p>
-
-    </section>
-
-    <!-- TRAVELLERS AND VENUES -->
-
-    <div class="landing-sections">
+</div>
+<h2>Know before you go.</h2>
+<p>Know what to expect. Decide what works for you.</p>
 
 
-        <section class="landing-panel">
+</header>
+<!-- WHY FLORA -->
+<section class="landing-section">
+<h2>More than an accessible label.</h2>
+<p>Access. Facilities. Noise. Lighting. Quiet spaces.</p>
 
-            <h2>For travellers</h2>
 
-            <p>
-                Explore unfamiliar places with greater confidence.
-            </p>
+<div class="landing-example">
+<h3>The details matter.</h3>
+<p>Step-free entrance? A quieter table? A toilet you can reach?</p>
+<p>What’s confirmed? What’s uncertain?</p>
 
-            <ul>
-                <li>Practical information about places and journeys.</li>
-                <li>Ask Flora about your individual requirements.</li>
-                <li>Understand what is verified and what remains uncertain.</li>
-                <li>Free for travellers.</li>
-            </ul>
+</div>
+</section>
+<!-- VISITOR EXPERIENCES -->
+<section aria-labelledby="experience-heading" class="experience-panel">
+<h3 id="experience-heading">Tell us about your experiences</h3>
+<p>Good experiences. Difficult journeys. Unexpected barriers.</p>
 
-            <form
-                class="flora-form"
-                action="https://formspree.io/f/xoeenlkw"
-                method="POST"
-            >
-
-                <label for="traveller-email">
+<details>
+<summary>Share your experience</summary>
+<!-- Uses the existing traveller Formspree inbox until a dedicated form is configured. -->
+<form action="https://formspree.io/f/xoeenlkw" class="flora-form" method="POST">
+<input name="submission_type" type="hidden" value="Flora experience"/>
+<label for="experience-message">What happened?</label>
+<textarea id="experience-message" maxlength="5000" name="experience" placeholder="Tell us what worked well, what was difficult, or what information would have helped." required=""></textarea>
+<label for="experience-email">Email address (optional)</label>
+<input autocomplete="email" id="experience-email" name="email" placeholder="you@example.com" type="email"/>
+<label class="waitlist-consent">
+<input name="follow_up_permission" type="checkbox" value="yes"/>
+<span>You may contact me about this experience (optional).</span>
+</label>
+<p class="experience-note">Please avoid including sensitive personal or medical details. Your experience may help improve Flora; we won't publish your story without asking you first.</p>
+<button type="submit">Send your experience</button>
+</form>
+</details>
+</section>
+<!-- HOW FLORA WILL HELP -->
+<section class="landing-section">
+<h2>How Flora will help</h2>
+<p>Start with where you want to go.</p>
+<div class="landing-steps">
+<div class="landing-step">
+<h3>1. Choose a place</h3>
+<p>A destination. A venue. An experience.</p>
+</div>
+<div class="landing-step">
+<h3>2. Ask what matters</h3>
+<p>Access. Noise. Facilities. Your journey.</p>
+</div>
+<div class="landing-step">
+<h3>3. Make your choice</h3>
+<p>What’s known. What’s uncertain.</p>
+</div>
+</div>
+<p class="future-note">In development. Help us shape what comes next.</p>
+</section>
+<!-- TRAVELLERS AND VENUES -->
+<div class="landing-sections">
+<section class="landing-panel">
+<h2>Explore with confidence.</h2>
+<p>Real places. Practical details. Fewer surprises.</p>
+<ul>
+<li>Places and journeys.</li>
+<li>Ask what matters to you.</li>
+<li>Verified details and clear unknowns.</li>
+<li>Always free for travellers.</li>
+</ul>
+<form action="https://formspree.io/f/xoeenlkw" class="flora-form" method="POST">
+<label for="traveller-email">
                     Your email address
                 </label>
-
-                <input
-                    type="email"
-                    id="traveller-email"
-                    name="email"
-                    placeholder="you@example.com"
-                    autocomplete="email"
-                    required
-                >
-
-                <label class="waitlist-consent">
-                    <input
-                        type="checkbox"
-                        name="consent"
-                        value="yes"
-                        required
-                    >
-                    <span>
+<input autocomplete="email" id="traveller-email" name="email" placeholder="you@example.com" required="" type="email"/>
+<label class="waitlist-consent">
+<input name="consent" required="" type="checkbox" value="yes"/>
+<span>
                         I agree to receive email updates about Flora.
                         I understand I can unsubscribe at any time.
                     </span>
-                </label>
-
-                <button type="submit">
+</label>
+<button type="submit">
                     Join the travellers' waitlist
                 </button>
-
-            </form>
-
-        </section>
-
-
-        <section class="landing-panel">
-
-            <h2>For venues</h2>
-
-            <p>
-                Help visitors understand what your venue offers.
-            </p>
-
-            <ul>
-                <li>Venue Information Walkthrough.</li>
-                <li>Clear, practical visitor information.</li>
-                <li>Fewer repetitive enquiries and misunderstandings.</li>
-                <li>Optional ongoing information updates.</li>
-            </ul>
-
-            <form
-                class="flora-form"
-                action="https://formspree.io/f/mgaalznz"
-                method="POST"
-            >
-
-                <label for="venue-email">
+</form>
+</section>
+<section class="landing-panel">
+<h2>Help visitors feel prepared.</h2>
+<p>Show your spaces. Explain access. Welcome more visitors.</p>
+<ul>
+<li>Venue Information Walkthrough.</li>
+<li>Clear visitor information.</li>
+<li>Fewer repeated questions.</li>
+<li>Optional information updates.</li>
+</ul>
+<form action="https://formspree.io/f/mgaalznz" class="flora-form" method="POST">
+<label for="venue-email">
                     Your email address
                 </label>
-
-                <input
-                    type="email"
-                    id="venue-email"
-                    name="email"
-                    placeholder="you@example.com"
-                    autocomplete="email"
-                    required
-                >
-
-                <label class="waitlist-consent">
-                    <input
-                        type="checkbox"
-                        name="consent"
-                        value="yes"
-                        required
-                    >
-                    <span>
+<input autocomplete="email" id="venue-email" name="email" placeholder="you@example.com" required="" type="email"/>
+<label class="waitlist-consent">
+<input name="consent" required="" type="checkbox" value="yes"/>
+<span>
                         I agree to receive email updates about Flora.
                         I understand I can unsubscribe at any time.
                     </span>
-                </label>
-
-                <button type="submit">
+</label>
+<button type="submit">
                     Join the venues' waitlist
                 </button>
+</form>
+</section>
+</div>
+<!-- FUTURE FLORA -->
+<section class="future-flora">
+<h2>Help shape Flora.</h2>
+<p>Local knowledge. Shared expertise. Better information.</p>
 
-            </form>
+<div class="future-grid">
+<div class="future-item">
+<h3>Become a local interviewer</h3>
+<p>Help venues share practical information in your area.</p>
 
-        </section>
+</div>
+<div class="future-item">
+<h3>Collaborate with Flora</h3>
+<p>3D tours. Accessibility expertise. Destination knowledge.</p>
 
-    </div>
 
-    <!-- FUTURE FLORA -->
-
-    <section class="future-flora">
-
-        <h2>Future Flora</h2>
-
-        <p>Help us bring Flora to more places.</p>
-
-        <p>
-            Our ambition is to grow Flora through a network
-            of people and organisations who share our belief
-            that reliable visitor information should be
-            easier to find and use.
-        </p>
-
-        <div class="future-grid">
-
-            <div class="future-item">
-
-                <h3>Become part of Flora's local network</h3>
-
-                <p>
-                    We're interested in hearing from people
-                    who would like to work flexibly from home,
-                    connecting with venues in their own areas.
-                </p>
-
-                <p>
-                    The aim is to develop opportunities for
-                    local interviewers who can introduce Flora,
-                    encourage venues to participate and help
-                    gather practical visitor information
-                    using a consistent approach.
-                </p>
-
-            </div>
-
-            <div class="future-item">
-
-                <h3>Collaborate with Flora</h3>
-
-                <p>
-                    We're keen to explore working with
-                    people and organisations already active
-                    in related fields, including:
-                </p>
-
-                <ul>
-                    <li>3D and virtual tour providers.</li>
-                    <li>Accessibility and sensory specialists.</li>
-                    <li>Destination Management Companies (DMCs).</li>
-                    <li>Local destination and travel experts.</li>
-                    <li>Accessible travel and visitor support services.</li>
-                </ul>
-
-                <p>
-                    Rather than duplicating valuable work,
-                    we'd like to explore how complementary
-                    information and expertise can work together.
-                </p>
-
-            </div>
-
-        </div>
-
-        <h3>Stronger together</h3>
-
-        <p>
-            Flora is intended to grow through collaboration,
-            helping more people access the information
-            they need to make their own choices.
-        </p>
-
-        <p class="future-note">
-            These are future plans and opportunities
-            we're exploring, rather than established
-            roles or formal partnerships.
-        </p>
-
-        <!-- FUTURE FLORA FORM -->
-
-        <div class="future-registration">
-
-            <h3>Interested in helping Flora grow?</h3>
-
-            <p>
-                Register your interest and let us know
-                how you'd like to be involved.
-            </p>
-
-            <form
-                class="flora-form"
-                action="https://formspree.io/f/myeebzgp"
-                method="POST"
-            >
-
-                <label for="future-email">
+</div>
+</div>
+<h3>Stronger together</h3>
+<p>Building on existing expertise, not duplicating it.</p>
+<p class="future-note">Future opportunities — not yet established roles or partnerships.</p>
+<!-- FUTURE FLORA FORM -->
+<div class="future-registration">
+<h3>Get involved</h3>
+<p>Tell us how you’d like to help.</p>
+<form action="https://formspree.io/f/myeebzgp" class="flora-form" method="POST">
+<label for="future-email">
                     Your email address
                 </label>
-
-                <input
-                    type="email"
-                    id="future-email"
-                    name="email"
-                    placeholder="you@example.com"
-                    autocomplete="email"
-                    required
-                >
-
-                <label for="future-interest">
+<input autocomplete="email" id="future-email" name="email" placeholder="you@example.com" required="" type="email"/>
+<label for="future-interest">
                     I'm interested in
                 </label>
-
-                <select
-                    id="future-interest"
-                    name="interest"
-                    required
-                >
-                    <option value="" disabled selected>
+<select id="future-interest" name="interest" required="">
+<option disabled="" selected="" value="">
                         Please select
                     </option>
-
-                    <option value="local-interviewer">
+<option value="local-interviewer">
                         Becoming a local venue interviewer
                     </option>
-
-                    <option value="collaboration">
+<option value="collaboration">
                         Collaborating with Flora
                     </option>
-
-                    <option value="both">
+<option value="both">
                         Both
                     </option>
-                </select>
-
-                <label class="waitlist-consent">
-                    <input
-                        type="checkbox"
-                        name="consent"
-                        value="yes"
-                        required
-                    >
-                    <span>
+</select>
+<label class="waitlist-consent">
+<input name="consent" required="" type="checkbox" value="yes"/>
+<span>
                         I agree to be contacted about
                         Future Flora opportunities.
                         I understand I can ask to have
                         my details removed at any time.
                     </span>
-                </label>
-
-                <button type="submit">
+</label>
+<button type="submit">
                     Register your interest
                 </button>
-
-            </form>
-
-        </div>
-
-    </section>
-
-    <!-- CLOSING THOUGHT -->
-
-    <section class="landing-promise">
-        <p>
-            Everyone deserves enough reliable information
-            to make their own decision.
-            Let Flora help you make yours.
-        </p>
-    </section>
-
-    <!-- PRIVACY -->
-
-    <p class="landing-privacy">
+</form>
+</div>
+</section>
+<!-- CLOSING THOUGHT -->
+<section class="landing-promise">
+<p>Reliable information. Your decision.</p>
+</section>
+<!-- PRIVACY -->
+<p class="landing-privacy">
         We use waitlist email addresses to contact you about Flora
         and your interest in joining. Experiences you choose to share
         are used to help improve Flora; an email address is optional
@@ -898,13 +627,10 @@ h1, h2, h3 {
         You can ask to unsubscribe or have your
         details deleted at any time.
     </p>
-
-    <footer class="landing-footer">
-        <p>Flora Â· Your Floko Guide</p>
-    </footer>
-
+<footer class="landing-footer">
+<p>Flora · Your Floko Guide</p>
+</footer>
 </main>
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const listenButton = document.getElementById("flora-listen");
@@ -1181,10 +907,5 @@ document.addEventListener("DOMContentLoaded", function () {
     updateButtons();
 });
 </script>
-
 </body>
 </html>
-
-
-
-
