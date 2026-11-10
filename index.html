@@ -45,7 +45,7 @@ h1, h2, h3 {
     margin: 0 auto 35px;
     padding: 30px;
     text-align: center;
-    background: rgba(235, 245, 247, 0.70);
+    background: rgba(235, 245, 247, 0.56);
     border-radius: 20px;
 }
 
@@ -100,13 +100,20 @@ h1, h2, h3 {
     cursor: not-allowed;
 }
 
+/* Soft, translucent panels over the beach photo. */
+.flora-intro, .landing-section, .landing-panel, .experience-panel,
+.future-flora, .landing-promise, .landing-privacy, .landing-footer {
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
 /* GENERAL SECTIONS */
 
 .landing-section {
     max-width: 850px;
     margin: 40px auto;
     padding: 24px;
-    background: rgba(235, 245, 247, 0.82);
+    background: rgba(235, 245, 247, 0.68);
     border-radius: 18px;
 }
 
@@ -116,7 +123,7 @@ h1, h2, h3 {
 }
 
 .landing-example {
-    background: rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.72);
     border-radius: 18px;
     padding: 25px;
     margin: 25px auto 0;
@@ -138,7 +145,7 @@ h1, h2, h3 {
 }
 
 .landing-step {
-    background: rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.72);
     border-radius: 18px;
     padding: 22px;
     min-width: 0;
@@ -161,7 +168,7 @@ h1, h2, h3 {
 .landing-panel {
     display: flex;
     flex-direction: column;
-    background: rgba(235, 245, 247, 0.88);
+    background: rgba(235, 245, 247, 0.72);
     border-radius: 18px;
     padding: 28px;
     min-width: 0;
@@ -182,7 +189,7 @@ h1, h2, h3 {
 }
 
 /* TRAVELLER COLUMN AND EXPERIENCE BOX */
-.experience-panel { max-width: 850px; margin: 30px auto 40px; background: rgba(235,245,247,0.92); border-radius: 18px; padding: 24px 28px; text-align: left; }
+.experience-panel { max-width: 850px; margin: 30px auto 40px; background: rgba(235,245,247,0.76); border-radius: 18px; padding: 24px 28px; text-align: left; }
 .experience-panel h3 { margin: 0 0 12px; font-size: 1.3rem; }
 .experience-panel p { margin: 10px 0; }
 .experience-panel details { margin-top: 16px; }
@@ -281,7 +288,7 @@ h1, h2, h3 {
 /* FUTURE FLORA */
 
 .future-flora {
-    background: rgba(235, 245, 247, 0.88);
+    background: rgba(235, 245, 247, 0.72);
     border-radius: 18px;
     padding: 30px;
     margin: 40px auto;
@@ -308,7 +315,7 @@ h1, h2, h3 {
     max-width: 620px;
     margin: 30px auto 0;
     padding: 24px;
-    background: rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.72);
     border-radius: 16px;
     text-align: left;
 }
@@ -329,7 +336,7 @@ h1, h2, h3 {
     max-width: 760px;
     margin: 35px auto;
     padding: 24px;
-    background: rgba(235,245,247,0.85);
+    background: rgba(235,245,247,0.72);
     border-radius: 18px;
 }
 
@@ -340,7 +347,7 @@ h1, h2, h3 {
 .landing-footer {
     margin-top: 35px;
     padding: 12px;
-    background: rgba(235,245,247,0.80);
+    background: rgba(235,245,247,0.72);
     border-radius: 12px;
 }
 
@@ -359,7 +366,7 @@ h1, h2, h3 {
 
     .flora-intro {
         padding: 24px 18px;
-        background: rgba(235,245,247,0.88);
+        background: rgba(235,245,247,0.76);
     }
 
     .flora-intro p {
