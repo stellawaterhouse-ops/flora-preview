@@ -427,13 +427,50 @@ h1, h2, h3 {
         scroll-behavior: auto;
     }
 }
+
+/* COASTAL FLORA: clearer hierarchy, more coastline, fewer pale boxes */
+.landing { max-width: 1120px; padding-top: 32px; }
+.flora-intro {
+    max-width: 790px;
+    padding: 30px 30px 38px;
+    margin-bottom: 48px;
+    background: linear-gradient(135deg, rgba(250,253,249,.94), rgba(235,247,242,.84));
+    border: 1px solid rgba(255,255,255,.85);
+    box-shadow: 0 12px 35px rgba(25,62,59,.17);
+}
+.flora-kicker { margin: 0 0 8px !important; font-size: .86rem !important; font-weight: 800; letter-spacing: .18em; color: #35654e; }
+.flora-intro h1 { font-size: clamp(2.45rem,5.2vw,4rem); line-height: 1.12; margin: 20px 0 12px; color: #173d31; }
+.flora-intro > p:last-child { font-size: clamp(1.05rem,1.8vw,1.3rem); font-weight: 500; margin-bottom: 0; }
+.flora-voice-controls { margin: 10px 0 14px; }
+.landing-section, .experience-panel, .future-flora, .landing-promise, .landing-privacy {
+    max-width: 790px;
+    background: rgba(250,253,250,.88);
+    border: 1px solid rgba(255,255,255,.8);
+    box-shadow: 0 8px 26px rgba(25,62,59,.12);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+.landing-section { margin: 32px auto; padding: 24px 30px; }
+.landing-section h2, .future-flora h2 { color: #20533f; }
+.landing-example, .landing-step, .future-registration { background: rgba(234,245,238,.88); }
+.landing-sections { max-width: 900px; background: transparent; margin: 32px auto; }
+.landing-panel { background: rgba(250,253,250,.94); border: 1px solid rgba(255,255,255,.9); box-shadow: 0 8px 26px rgba(25,62,59,.14); }
+.landing-panel h2 { color: #20533f; }
+.landing-footer { max-width: 790px; background: rgba(250,253,250,.85); }
+@media (max-width:680px) {
+ .landing { padding: 16px 12px 30px; }
+ .flora-intro { padding: 22px 16px 26px; margin-bottom: 28px; }
+ .flora-intro h1 { font-size: clamp(2.15rem,9vw,3rem); }
+ .landing-section, .experience-panel, .future-flora, .landing-promise, .landing-privacy { background: rgba(250,253,250,.95); }
+ .landing-section { padding: 20px; }
+}
 </style>
 </head>
 <body class="flora-conversation-page">
 <main class="landing">
 <!-- INTRODUCTION -->
 <header class="flora-intro">
-<h1>Meet Flora</h1>
+<p class="flora-kicker">MEET FLORA</p>
 <div aria-label="Page audio controls" class="flora-voice-controls" role="group">
 <button id="flora-listen" type="button">Listen to this page
             </button>
@@ -442,7 +479,7 @@ h1, h2, h3 {
 <button disabled="" id="flora-stop" type="button">Stop reading
             </button>
 </div>
-<h2>Know before you go.</h2>
+<h1>Know before you go.</h1>
 <p>Know what to expect. Decide what works for you.</p>
 
 
