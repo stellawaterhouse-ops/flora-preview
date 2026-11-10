@@ -464,6 +464,21 @@ h1, h2, h3 {
  .landing-section, .experience-panel, .future-flora, .landing-promise, .landing-privacy { background: rgba(250,253,250,.95); }
  .landing-section { padding: 20px; }
 }
+/* Coastal refinement: compact top cards and clear primary headline */
+@media (min-width: 681px) {
+  .flora-intro { max-width: 620px; padding: 22px 26px 28px; margin-bottom: 28px; }
+  .flora-intro h1 { font-size: clamp(2.6rem, 4.5vw, 3.65rem); margin: 12px 0 10px; }
+  .landing > .landing-section:first-of-type { max-width: 660px; padding: 22px 24px; }
+  .landing > .landing-section:first-of-type .landing-example { padding: 17px 22px; margin-top: 16px; }
+  .landing > .landing-section:first-of-type h2 { margin: 4px 0 10px; }
+  .landing > .landing-section:first-of-type p { margin: 10px auto; }
+}
+.flora-intro .flora-kicker { font-size: .88rem !important; letter-spacing: .12em; }
+.flora-intro h1 { font-weight: 800; }
+@media (max-width: 680px) {
+  .flora-intro { max-width: 100%; }
+  .landing > .landing-section:first-of-type { max-width: 100%; }
+}
 </style>
 </head>
 <body class="flora-conversation-page">
@@ -492,7 +507,8 @@ h1, h2, h3 {
 
 <div class="landing-example">
 <h3>The details matter.</h3>
-<p>Step-free entrance? A quieter table? A toilet you can reach?</p>
+<p>Step-free entrance? A quieter table? An accessible toilet?</p>
+<p>Blackout blinds? No fluorescent lighting? Somewhere to take a break?</p>
 <p>What’s confirmed? What’s uncertain?</p>
 
 </div>
