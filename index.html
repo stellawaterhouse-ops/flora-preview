@@ -571,6 +571,44 @@ main.landing > footer.landing-footer {
   margin-right: auto !important;
   text-align: center;
 }
+
+/* Final layout: restrained, progressively wider panels and centred copy. */
+@media (min-width: 681px) {
+  main.landing > header.flora-intro { max-width: 750px !important; }
+  main.landing > section.landing-section:first-of-type { max-width: 790px !important; }
+  main.landing > section.experience-panel { max-width: 830px !important; }
+  main.landing > section.experience-panel + section.landing-section { max-width: 870px !important; }
+  main.landing > div.landing-sections { max-width: 950px !important; }
+}
+main.landing > header.flora-intro,
+main.landing > section.landing-section,
+main.landing > section.experience-panel,
+main.landing > div.landing-sections,
+main.landing > section.future-flora,
+main.landing > section.landing-promise,
+main.landing > p.landing-privacy,
+main.landing > footer.landing-footer {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+main.landing .landing-panel,
+main.landing .landing-step,
+main.landing .future-item,
+main.landing .future-registration { text-align: center !important; }
+main.landing .landing-panel ul,
+main.landing .future-item ul {
+  list-style-position: inside;
+  padding-left: 0;
+  text-align: center;
+}
+main.landing .flora-form { text-align: center !important; }
+main.landing .flora-form label { text-align: center !important; }
+main.landing .flora-form input[type="email"],
+main.landing .flora-form select { text-align: center; }
+main.landing .waitlist-consent { justify-content: center; }
+main.landing > footer.landing-footer { max-width: 750px !important; }
+
 </style>
 </head>
 <body class="flora-conversation-page">
