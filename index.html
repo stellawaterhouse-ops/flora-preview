@@ -41,7 +41,7 @@ h1, h2, h3 {
 /* INTRODUCTION */
 
 .flora-intro {
-    max-width: 750px;
+    max-width: 860px;
     margin: 0 auto 35px;
     padding: 30px;
     text-align: center;
@@ -60,7 +60,7 @@ h1, h2, h3 {
 }
 
 .flora-intro p {
-    max-width: 750px;
+    max-width: 760px;
     margin: 15px auto;
     font-size: 16.5px;
 }
@@ -110,7 +110,7 @@ h1, h2, h3 {
 /* GENERAL SECTIONS */
 
 .landing-section {
-    max-width: 750px;
+    max-width: 850px;
     margin: 40px auto;
     padding: 24px;
     background: rgba(235, 245, 247, 0.68);
@@ -118,7 +118,7 @@ h1, h2, h3 {
 }
 
 .landing-section > p {
-    max-width: 750px;
+    max-width: 780px;
     margin: 15px auto;
 }
 
@@ -528,6 +528,48 @@ h1, h2, h3 {
   .landing > section.landing-section:first-of-type { width: 100%; max-width: 680px; }
   .landing > section.experience-panel { width: 100%; max-width: 740px; }
   .landing > section.experience-panel + section.landing-section { width: 100%; max-width: 800px; }
+}
+
+/* Progressive, centred panel widths, desktop only. */
+@media (min-width: 681px) {
+  main.landing > header.flora-intro {
+    width: 100% !important; max-width: 750px !important;
+    margin-left: auto !important; margin-right: auto !important;
+  }
+  main.landing > section.landing-section:first-of-type {
+    width: 100% !important; max-width: 825px !important;
+    margin-left: auto !important; margin-right: auto !important;
+  }
+  main.landing > section.experience-panel {
+    width: 100% !important; max-width: 900px !important;
+    margin-left: auto !important; margin-right: auto !important;
+  }
+  main.landing > section.experience-panel + section.landing-section {
+    width: 100% !important; max-width: 950px !important;
+    margin-left: auto !important; margin-right: auto !important;
+  }
+  main.landing > div.landing-sections {
+    width: 100% !important; max-width: 1050px !important;
+    margin-left: auto !important; margin-right: auto !important;
+  }
+}
+main.landing > section.landing-section:first-of-type,
+main.landing > section.experience-panel {
+  text-align: center;
+}
+main.landing > section.landing-section:first-of-type .landing-example {
+  text-align: center;
+}
+main.landing > section.experience-panel details { text-align: center; }
+main.landing > section.experience-panel details[open] .flora-form { text-align: left; }
+
+/* Centre the closing Flora signature panel without altering other sections. */
+main.landing > footer.landing-footer {
+  width: 100%;
+  max-width: 790px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
 }
 </style>
 </head>
