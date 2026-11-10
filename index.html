@@ -494,6 +494,33 @@ h1, h2, h3 {
   .flora-intro .flora-kicker { font-size: 1.35rem !important; letter-spacing: .025em; }
   .flora-intro h1 { font-size: clamp(2rem, 7vw, 2.55rem); }
 }
+
+/* Coastal refinement 3: consistent panels and better proportions */
+@media (min-width: 681px) {
+  .flora-intro { max-width: 720px; }
+  .flora-intro h1 { font-size: clamp(2.15rem, 2.7vw, 2.65rem); white-space: nowrap; }
+  .landing > .experience-panel { max-width: 620px; }
+}
+/* Keep each panel a single even tone, including behind its writing. */
+.flora-intro, .landing-section, .experience-panel, .landing-panel,
+.future-flora, .landing-promise, .landing-privacy, .landing-footer {
+  background: rgba(239, 247, 246, .94);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+/* The example is part of its parent panel, not a differently tinted patch. */
+.landing-example { background: transparent; }
+@media (max-width: 680px) {
+  .flora-intro h1 { font-size: clamp(1.75rem, 6.6vw, 2.45rem); }
+  .flora-intro, .landing-section, .experience-panel { background: rgba(239,247,246,.96); }
+}
+
+/* Keep the opening panels in a gentle stepped width hierarchy. */
+@media (min-width: 681px) {
+  .flora-intro { max-width: 650px; }
+  .landing > .landing-section:first-of-type { max-width: 720px; }
+  .landing > .experience-panel { max-width: 620px; }
+}
 </style>
 </head>
 <body class="flora-conversation-page">
