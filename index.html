@@ -621,49 +621,37 @@ main.landing > footer.landing-footer { max-width: 750px !important; }
 /* HELP SHAPE FLORA — COMPACT SPACING */
 
 .future-grid {
-    gap: 4px;
-    margin: 6px auto;
+    gap: 12px;
+    margin: 12px auto;
 }
 
 .future-item {
-    padding: 2px 12px;
+    padding: 8px 12px;
 }
 
 .future-item h3 {
-    margin: 2px 0;
+    margin: 6px 0;
 }
 
 .future-item p {
-    margin: 2px 0;
-}
-
-.future-note {
     margin: 4px 0;
 }
 
+.future-note {
+    margin: 8px 0;
+}
+
 .future-registration {
-    margin-top: 8px;
-    padding: 12px 20px;
+    margin-top: 14px;
+    padding: 16px 20px;
 }
 
 .future-registration h3 {
-    margin: 0 0 4px;
-}
-
-.future-registration p {
     margin: 0 0 6px;
 }
 
-/* Tighter line spacing in Help shape Flora */
-.future-flora {
-    line-height: 1.3;
-}
-
-.future-flora > h2,
-.future-flora > h3,
-.future-flora > p {
-    margin-top: 6px;
-    margin-bottom: 6px;
+.future-registration p {
+    margin: 0 0 12px;
 }
 
 /* LEFT-ALIGN THE FORM, NOT THE HEADINGS */
@@ -735,6 +723,30 @@ main.landing > section.future-flora .future-registration {
 main.landing > section.future-flora .future-registration h3 { margin: 0 0 3px; }
 main.landing > section.future-flora .future-registration > p { margin: 0 0 8px; }
 main.landing > section.future-flora .future-registration .flora-form { margin-top: 10px; }
+
+
+/* FINAL POLISH: improve the three steps without changing panel widths. */
+@media (min-width: 681px) {
+  main.landing .landing-step { padding: 17px 12px; }
+  main.landing .landing-step h3 {
+    font-size: 1.02rem;
+    line-height: 1.25;
+    margin: 0 0 12px;
+  }
+  main.landing .landing-step p { margin: 0; line-height: 1.45; }
+}
+
+/* Make the travellers and venues sections easier to scan. */
+main.landing .landing-panel { padding: 23px 24px; }
+main.landing .landing-panel h2 { margin-bottom: 12px; }
+main.landing .landing-panel > p { margin: 4px 0 12px; line-height: 1.45; }
+main.landing .landing-panel ul { margin: 8px 0 12px; }
+main.landing .landing-panel li { margin-bottom: 7px; line-height: 1.4; }
+main.landing .landing-panel .flora-form { padding-top: 12px; }
+@media (max-width: 680px) {
+  main.landing .landing-step h3 { font-size: 1.1rem; }
+  main.landing .landing-panel { padding: 20px; }
+}
 
 </style>
 </head>
