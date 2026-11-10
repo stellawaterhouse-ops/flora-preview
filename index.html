@@ -609,6 +609,15 @@ main.landing .flora-form select { text-align: center; }
 main.landing .waitlist-consent { justify-content: center; }
 main.landing > footer.landing-footer { max-width: 750px !important; }
 
+/* Final compact staircase: widths apply to the entire panel, not its content. */
+@media (min-width: 681px) {
+  main.landing > header.flora-intro { width: min(100%, 600px) !important; max-width: 600px !important; }
+  main.landing > section.landing-section:first-of-type { width: min(100%, 650px) !important; max-width: 650px !important; }
+  main.landing > section.experience-panel { width: min(100%, 700px) !important; max-width: 700px !important; }
+  main.landing > section.experience-panel + section.landing-section { width: min(100%, 750px) !important; max-width: 750px !important; }
+  main.landing > div.landing-sections { width: min(100%, 850px) !important; max-width: 850px !important; }
+  main.landing > footer.landing-footer { width: min(100%, 650px) !important; max-width: 650px !important; }
+}
 </style>
 </head>
 <body class="flora-conversation-page">
