@@ -479,6 +479,21 @@ h1, h2, h3 {
   .flora-intro { max-width: 100%; }
   .landing > .landing-section:first-of-type { max-width: 100%; }
 }
+
+/* Coastal refinement 2: balanced headings and compact opening panels */
+@media (min-width: 681px) {
+  .flora-intro { max-width: 690px; padding: 22px 30px 26px; margin-bottom: 26px; }
+  .flora-intro .flora-kicker { font-size: 1.65rem !important; letter-spacing: .025em; margin: 0 0 8px !important; }
+  .flora-intro h1 { font-size: clamp(2.3rem, 3.1vw, 2.8rem); margin: 10px 0 8px; line-height: 1.2; }
+  .flora-intro > p:last-child { font-size: 1.1rem; }
+  .landing > .landing-section:first-of-type { max-width: 690px; padding: 22px 24px; }
+  .landing > .landing-section:first-of-type .landing-example { max-width: 620px; padding: 16px 20px; }
+  .landing > .experience-panel { max-width: 690px; padding: 20px 24px; }
+}
+@media (max-width: 680px) {
+  .flora-intro .flora-kicker { font-size: 1.35rem !important; letter-spacing: .025em; }
+  .flora-intro h1 { font-size: clamp(2rem, 7vw, 2.55rem); }
+}
 </style>
 </head>
 <body class="flora-conversation-page">
