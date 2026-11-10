@@ -681,6 +681,49 @@ main.landing > footer.landing-footer { max-width: 750px !important; }
     text-align: left;
 }
 
+
+/* Final targeted refinements: retain all existing panel widths and positions. */
+/* Form content is left-aligned, while the surrounding panel headings stay centred. */
+main.landing .flora-form,
+main.landing .flora-form label,
+main.landing .flora-form input[type="email"],
+main.landing .flora-form select,
+main.landing .flora-form textarea,
+main.landing .flora-form .waitlist-consent span {
+    text-align: left !important;
+}
+main.landing .flora-form .waitlist-consent {
+    justify-content: flex-start;
+    text-align: left !important;
+}
+main.landing .flora-form .waitlist-consent input[type="checkbox"] {
+    flex-shrink: 0;
+}
+
+/* Compact only the Help shape Flora section, without altering its outer width. */
+main.landing > section.future-flora {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+main.landing > section.future-flora > h2 { margin: 0 0 7px; }
+main.landing > section.future-flora > p { margin: 6px auto; }
+main.landing > section.future-flora .future-grid {
+    gap: 5px;
+    margin: 10px auto 4px;
+}
+main.landing > section.future-flora .future-item { padding: 2px 8px; }
+main.landing > section.future-flora .future-item h3 { margin: 2px 0 3px; }
+main.landing > section.future-flora .future-item p { margin: 2px 0 5px; }
+main.landing > section.future-flora > h3 { margin: 9px 0 3px; }
+main.landing > section.future-flora > .future-note { margin: 5px auto 8px; }
+main.landing > section.future-flora .future-registration {
+    margin-top: 10px;
+    padding: 14px 20px;
+}
+main.landing > section.future-flora .future-registration h3 { margin: 0 0 3px; }
+main.landing > section.future-flora .future-registration > p { margin: 0 0 8px; }
+main.landing > section.future-flora .future-registration .flora-form { margin-top: 10px; }
+
 </style>
 </head>
 <body class="flora-conversation-page">
