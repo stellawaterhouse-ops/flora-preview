@@ -521,6 +521,14 @@ h1, h2, h3 {
   .landing > .landing-section:first-of-type { max-width: 720px; }
   .landing > .experience-panel { max-width: 620px; }
 }
+
+/* Visibly stepped widths: larger differences between panels. */
+@media (min-width: 681px) {
+  .landing > header.flora-intro { width: 100%; max-width: 550px; }
+  .landing > section.landing-section:first-of-type { width: 100%; max-width: 680px; }
+  .landing > section.experience-panel { width: 100%; max-width: 740px; }
+  .landing > section.experience-panel + section.landing-section { width: 100%; max-width: 800px; }
+}
 </style>
 </head>
 <body class="flora-conversation-page">
